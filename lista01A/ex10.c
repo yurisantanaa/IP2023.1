@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main () {
-    int x, y, z, n = 3;
+    int x, y, z, n;
     int temp, i, j;
     char l1 , l2 , l3;
     scanf("%d %d %d\n", &x, &y, &z);
@@ -8,6 +8,8 @@ int main () {
     int ordem[] = {x, y, z};
     char impressao[] = {l1, l2, l3}; 
     
+    n = sizeof(ordem) / sizeof(ordem[0]);
+
     for (i = 0 ; i < n ; i++){
         for (j = 0 ; j < n - i - 1 ; j++){
             if (ordem[j] > ordem[j + 1]){
