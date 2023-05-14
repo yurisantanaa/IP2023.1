@@ -1,67 +1,43 @@
 #include <stdio.h>
 int main () {
-    int x, y, z;
-    int a , b ,c;
-    char A , B , C;
-    int ordem [3];
+    int x, y, z, n = 3;
+    int temp, i, j;
+    char l1 , l2 , l3;
     scanf("%d %d %d\n", &x, &y, &z);
-    scanf("%c%c%c", &A ,&B ,&C);
-
-    if (x <= 100 && y <= 100 && z <= 100) {
-        if (x > y){
-            if (x > z) {
-
-                if(y > z) {
-                    a = z;
-                    b = y;
-                    c = x;
-                }
-                else {
-                    a = y;
-                    b = z;
-                    c = a;
-
-                }
-            }
-
-            else {
-                c = z;
-                b = x;
-                a = y;
-            }
-
-        }
-        else {
-            if (x > z) {
-                a = z;
-                b = x;
-                c = y;
-            }
-            if (x < z) {
-                if (y > z) {
-                    a = x;
-                    b = z;
-                    y = c;
-                }
-                else {
-                    a = x;
-                    b = y;
-                    c = z;
-                }
+    scanf("%c %c %c", &l1 ,&l2 ,&l3);
+    int ordem[] = {x, y, z};
+    char impressao[] = {l1, l2, l3}; 
+    
+    for (i = 0 ; i < n ; i++){
+        for (j = 0 ; j < n - i - 1 ; j++){
+            if (ordem[j] > ordem[j + 1]){
+                temp = ordem[j];
+                ordem[j] = ordem[j + 1];
+                ordem[j + 1] = temp;
             }
         }
     }
-    
 
-printf ("%d %d %d",a ,b ,c);
+    for (i = 0; i < n ; i++){
+        if(impressao[i] == 'A'){
+            impressao[i] = ordem[0];
+        }
+        else if (impressao [i] == 'B') {
+            impressao[i] = ordem[1];
+        }
+        else {
+            impressao[i] = ordem[2];
+        }
+    }
+
+    for (i = 0; i < n ; i++){
+        if (i < 3){
+            printf ("%d ", impressao[i]);
+        }
+        else {
+            printf ("%d", impressao[i]);
+        }
+    }
+
     return 0;
-
 }
-
-
-
-/*  printf("%d %d %d\n", x, y, z);
-    printf("%c %c %c\n", a, b, c);z*/
-
-
-
