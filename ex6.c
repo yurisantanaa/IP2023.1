@@ -2,9 +2,9 @@
 #include <math.h>
 
 int main() {
-   	int a, b, c;
+   	float a, b, c;
    	float delta, raiz1, raiz2;
-   	scanf("%d %d %d", &a, &b, &c);
+   	scanf("%f %f %f", &a, &b, &c);
 	delta = b*b - 4*a*c;
 	raiz1 = (-b + sqrt(delta))/(2*a);
 	raiz2 = (-b - sqrt(delta))/(2*a);
