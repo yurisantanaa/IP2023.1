@@ -6,17 +6,17 @@ int main () {
     rendapc = renda/qtd;
     salmin = 937.00 * 1.5;
 
-     if (rendapc < salmin && es == 2 && ecod == 4){
+    if (es == 2 && rendapc <= salmin && ecod == 4){ 
         printf("ALUNO COTISTA (L1)");
     }
-    else if (rendapc < salmin && es == 2 && ecod == 1 || ecod == 2 ||ecod == 3){
+    else if (es == 2 && rendapc <= salmin && (ecod == 1 || ecod == 2 ||ecod == 3)){
         printf("ALUNO COTISTA (L2)");
     }
-    else if (es == 2 && ecod == 4){
-        printf("ALUNO COTISTA (L3)");
-    }
-    else if (es == 2 && ecod == 1  || ecod ==  2 || ecod == 3){
+    else if (es == 2 && (ecod == 1  || ecod ==  2 || ecod == 3)){
         printf("ALUNO COTISTA (L4)");
+    }
+    else if (es == 2){
+        printf("ALUNO COTISTA (L3)");
     }
     else{
         printf("ALUNO NAO COTISTA");
