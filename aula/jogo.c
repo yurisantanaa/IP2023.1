@@ -97,7 +97,7 @@ void tela_game_state(int nt, int last_n) {
 int main() {
     int N;
     int nt;
-    int x;
+    int x = 0;
     int last_n;
 
     init_game();
