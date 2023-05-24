@@ -1,26 +1,38 @@
 #include <stdio.h>
 int main () {
-    int n, i , k = 1, s = 0, x = 0;
+    int n, i , tamanhoatual = 1, tamanhomax = 1;
+    
+    
     do {
         scanf ("%d", &n);
      }while (n <= 0);
+
+
     int v[n];
     for (i = 0; i < n ; i++) {
         scanf("%d", &v[i]);
     }
     for (i = 0; i < n ; i++) {
-        if (v[i] <= v[i + 1]) {
-            k += 1;
-            if (k > s){
-                s = k;
+
+        if (i == n-1) {
+            if ( v[n - 1] < 0 )
+            tamanhoatual -=1;
+        }
+        
+        
+        
+        if (v[i] < v[i + 1]) {
+            tamanhoatual += 1;
+            if (tamanhoatual > tamanhomax){
+                tamanhomax = tamanhoatual;
             }
         }
         else {
-            k = 1;
+            tamanhoatual = 1;
         }
     
     }
 
-    printf("O comprimento do segmento crescente maximo e:   %d", s);
+    printf("O comprimento do segmento crescente maximo e: %d\n", tamanhomax);
     return 0;
 }

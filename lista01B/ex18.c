@@ -18,8 +18,14 @@ int main () {
     int n, div;
     int i = 2;
     
- 
-    scanf("%d",&n);
+    do {
+        scanf("%d",&n);
+        if (n < 2) {
+        printf("Fatoracao nao e possivel para o numero %d!\n",n);
+        }
+
+    } while (n < 2);
+    
     if (n > 1) {
         printf("%d = ", n);
         while (n >= i) {   
@@ -38,11 +44,7 @@ int main () {
             i++;
         }
     }
-    else {
-        printf("Fatoracao nao e possivel para o numero %d\n",n);
-    }
- 
- 
+    
  
     return 0;
 }

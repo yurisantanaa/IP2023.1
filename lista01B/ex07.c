@@ -2,7 +2,7 @@
 #define MAX 10000
 int main () {
     int j = 0, i, ni = 0, np = 0, num;
-    float si = 0, sp = 0, mi, mp;
+    double si = 0, sp = 0, mi, mp;
     int v[MAX];
     
     while (1){
