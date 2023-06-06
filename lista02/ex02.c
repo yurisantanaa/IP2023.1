@@ -3,12 +3,8 @@
 
 int fibonacci (int t1, int t2, int n) {
     unsigned long int temp = 0, i = 2;
-    if (n == 1) {
-        return t1;
-    }
-    else if (n == 2) {
-        return t2;
-    }
+    if (n == 1) return t1;
+    else if (n == 2) return t2;
     else if (n > 2) {
         while (i < n) {
             temp = t1 + t2;
@@ -23,10 +19,9 @@ int fibonacci (int t1, int t2, int n) {
 
 
 int main () {
-    int t1, t2, n;
-    unsigned long int resultado;
+    int t1, t2, n, resultado;
     scanf ("%d %d %d", &t1, &t2, &n);
     resultado = fibonacci (t1, t2, n);
-    printf("%ld",resultado);
+    printf("%d",resultado);
     return 0;
 }
