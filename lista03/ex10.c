@@ -13,7 +13,7 @@ int maior = 0;
 
 int menor(int vetor[],int len) {
 int k;
-int menor = 0;
+int menor = 10000;
     for (k = 0 ; k < len; k++){
      if (vetor[k] < menor) {
         menor = vetor[k];
@@ -24,10 +24,11 @@ int menor = 0;
 
 void invertevetor(int vetor[],int len) {
     int j;
-    for (j = len - 1; j <=0 ; j--) {
+    for (j = len - 1; j >= 0 ; j--) {
         printf("%d",vetor[j]);
+        if (j > 0) printf(" ");
+        else printf("\n");
     }
-    printf("\n");
 }
 
 
@@ -38,15 +39,17 @@ int main() {
     int vetor[n];
     int l;
         for (l = 0 ; l < n ; l++) {
-            scanf("%d",vetor);
-        }    
+            scanf("%d",&vetor[l]);
+            printf("%d",vetor[l]);
+            if (l == n - 1) printf("\n");
+            else printf(" ");
+        }
     int len = sizeof(vetor)/sizeof(vetor[0]);
-    printf("%d",*vetor);
     invertevetor(vetor,len);
     maiornum = maior(vetor,len);
     menornum = menor(vetor,len);
-    printf("%d",maiornum);
-    printf("%d",menornum);
+    printf("%d\n",maiornum);
+    printf("%d\n",menornum);
 
     return 0;
 }
