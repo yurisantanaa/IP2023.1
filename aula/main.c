@@ -1,15 +1,17 @@
-#include "complex.h"
+#include "imagem.h"
 
-int main() {
-    Complex a,b,c;
-    a = cp_new(2,3);
-    b = cp_new(-1,5);
-    c = cp_sum(a,b);
-    cp_print(c,1);
-    c = cp_mult(a,b);
-    cp_print(c,1);
-    c = cp_div(a,b);
-    cp_print(c,1);
-    cp_print(c,2);
+
+int main(){
+    Image I;
+    I = im_new(800,600);
+    im_fill_bg(I,0);
+    im_draw_hline(I,2,2,10,255);
+    
+
+
+
+
+    im_write(I);
+    im_free(I);
     return 0;
 }
